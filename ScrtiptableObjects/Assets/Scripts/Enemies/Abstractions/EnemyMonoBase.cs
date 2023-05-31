@@ -6,4 +6,7 @@ public class EnemyMonoBase : MonoBehaviour
     public float attackRate;
     public float speed;
     public float damage;
+
+
+
 }

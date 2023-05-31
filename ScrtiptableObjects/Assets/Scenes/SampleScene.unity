@@ -823,8 +823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 11400000, guid: 8a1c35bc2a53bed4d838d5af3489bdf6, type: 2}
-  - {fileID: 11400000, guid: 88766578938c5da4e97c528e58578d51, type: 2}
   - {fileID: 11400000, guid: f78d39a5016e04b4aacfb0fc983280a4, type: 2}
 --- !u!1 &1671296932
 GameObject:
@@ -942,6 +940,7 @@ MonoBehaviour:
   floatingJoystick: {fileID: 196146549}
   speed: 10
   smoothTurnTime: 0.3
+  health: 100
 --- !u!54 &1671296938
 Rigidbody:
   m_ObjectHideFlags: 0

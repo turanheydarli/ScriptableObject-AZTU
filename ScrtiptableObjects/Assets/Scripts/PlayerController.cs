@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDestructible
 {
     [SerializeField] private FloatingJoystick floatingJoystick;
     [SerializeField] private float speed;
@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _direction;
     private float _currentTurnAngle;
+
+    [SerializeField] private float health;
+
+    public float Health => health;
 
     void Start()
     {
@@ -29,6 +33,16 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, angle, 0);
 
             _rigidbody.MovePosition(transform.position + (_direction.normalized * (speed * Time.deltaTime)));
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health = Mathf.Max(0, health - damage);
+
+        if (health == 0)
+        {
+            Debug.Log("Player died");
         }
     }
 }
